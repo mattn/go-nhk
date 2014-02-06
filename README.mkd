@@ -1,0 +1,35 @@
+go-nhk
+======
+
+Interface to NHK Program Data API written by golang
+
+http://api-portal.nhk.or.jp/ja
+
+Usage:
+------
+
+```go
+client := nhk.NewClient(os.Getenv("NHK_PROGRAM_APIKEY"))
+pl, _ := client.ProgramList("130", "g1", nil)
+for _, p := range pl {
+	fmt.Println(p.Title)
+}
+```
+
+
+Install:
+--------
+
+```
+go get github.com/mattn/go-nhk
+```
+
+License:
+--------
+
+MIT: http://mattn.mit-license.org/2014
+
+Author:
+-------
+
+Yasuhiro Matsumoto (mattn.jp@gmail.com)
